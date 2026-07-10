@@ -28,7 +28,7 @@ export const products = [
     name: "Gosai Premium PVC Cricket Bat",
     category: "sports-equipment",
     subcategory: "cricket-gear",
-    price: "₹499",
+    price: "₹215",
     rating: 4.8,
     reviews: 124,
     description: "Engineered with high-impact heavy-duty PVC, the Gosai Cricket Bat offers unmatched durability and a sweet spot designed for powerful shots. Perfect for gully cricket, indoor nets, and training drills.",
@@ -40,7 +40,7 @@ export const products = [
       "Usage: Best with tennis balls and wind balls"
     ],
     image: "/images/pvc-cricket-bat.jpg",
-    meeshoLink: "https://www.meesho.com",
+    meeshoLink: "https://www.meesho.com/gosai-plastic-cricket-bat-full-size-8pvc-plastic-cricket-bat-800-850-g-age-group-15/p/aw8r8q",
     amazonLink: "https://www.amazon.in"
   },
   {
@@ -59,7 +59,7 @@ export const products = [
       "Pack details: Pack of 6 training balls"
     ],
     image: "/images/cricket-ball.jpg",
-    meeshoLink: "https://www.meesho.com",
+    meeshoLink: "https://www.meesho.com/dyweq?ms=2",
     amazonLink: "https://www.amazon.in"
   },
   {
@@ -78,7 +78,7 @@ export const products = [
       "Portability: Light and easy to carry inside bags"
     ],
     image: "/images/wicket-set.jpg",
-    meeshoLink: "https://www.meesho.com",
+    meeshoLink: "https://www.meesho.com/cricket-plastic-wicket-set-black-durable-lightweight-stump-bails-for-15age-group-practice-recreational-play-1-set-wicket-set-black/p/giwf22",
     amazonLink: "https://www.amazon.in"
   },
 
@@ -99,7 +99,7 @@ export const products = [
       "Includes: 2 Rackets and 1 premium full-cover carry bag"
     ],
     image: "/images/pro-rackets.jpg",
-    meeshoLink: "https://www.meesho.com",
+    meeshoLink: "https://www.meesho.com/dyweq?ms=2",
     amazonLink: "https://www.amazon.in"
   },
   {
@@ -118,7 +118,7 @@ export const products = [
       "Quantity: 12 Pieces per tube"
     ],
     image: "/images/shuttlecock.jpg",
-    meeshoLink: "https://www.meesho.com",
+    meeshoLink: "https://www.meesho.com/dyweq?ms=2",
     amazonLink: "https://www.amazon.in"
   },
 
@@ -139,7 +139,7 @@ export const products = [
       "Handles: Ergonomic sweat-wicking foam handle grips"
     ],
     image: "/images/skipping-rope.jpg",
-    meeshoLink: "https://www.meesho.com",
+    meeshoLink: "https://www.meesho.com/dyweq?ms=2",
     amazonLink: "https://www.amazon.in"
   },
   {
@@ -158,7 +158,7 @@ export const products = [
       "Comfort: Non-slip textured comfort grip"
     ],
     image: "/images/pvc-dumbbells.jpg",
-    meeshoLink: "https://www.meesho.com",
+    meeshoLink: "https://www.meesho.com/dyweq?ms=2",
     amazonLink: "https://www.amazon.in"
   },
 
@@ -179,7 +179,7 @@ export const products = [
       "Portability: Compact size to workout anywhere, anytime"
     ],
     image: "/images/hand-gripper.jpg",
-    meeshoLink: "https://www.meesho.com",
+    meeshoLink: "https://www.meesho.com/dyweq?ms=2",
     amazonLink: "https://www.amazon.in"
   },
   {
@@ -198,7 +198,7 @@ export const products = [
       "Ventilation: Breathable mesh fabric backing"
     ],
     image: "/images/skating-kit.jpg",
-    meeshoLink: "https://www.meesho.com",
+    meeshoLink: "https://www.meesho.com/dyweq?ms=2",
     amazonLink: "https://www.amazon.in"
   }
 ];
