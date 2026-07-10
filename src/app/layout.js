@@ -17,14 +17,27 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Gosai Sports Outlet | Premium Sports & Fitness Gear",
-  description: "Browse premium PVC cricket bats, pro badminton rackets, training gear, dumbbells, and protective sports equipment at Gosai Sports. Buy on Amazon and Meesho.",
-  keywords: "sports equipment, pvc cricket bat, badminton racket, hand gripper, skipping rope, dumbbells, gosai sports",
+  title: "Gosai Industries | Premium Sports & Fitness Gear",
+  description: "Browse premium PVC cricket bats, pro badminton rackets, training gear, dumbbells, and protective sports equipment manufactured by Gosai Industries. Buy on Amazon and Meesho.",
+  keywords: "sports equipment, pvc cricket bat, badminton racket, hand gripper, skipping rope, dumbbells, gosai industries, gosai sports",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${inter.variable}`}>
+    <html lang="en" className={`${outfit.variable} ${inter.variable}`} data-theme="light" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const savedTheme = localStorage.getItem('theme');
+                const theme = savedTheme ? savedTheme : 'light';
+                document.documentElement.setAttribute('data-theme', theme);
+              })()
+            `,
+          }}
+        />
+      </head>
       <body style={{ display: "flex", flexDirection: "column", minHeight: "100vh", backgroundColor: "var(--bg-primary)" }}>
         <Navbar />
         <main style={{ flex: 1, display: "flex", flexDirection: "column" }}>

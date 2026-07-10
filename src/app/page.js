@@ -81,6 +81,7 @@ export default function Home() {
                 alt="Gosai Sports Featured Showcase"
                 fill
                 style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
               {/* Overlay with glowing brand emblem */}
