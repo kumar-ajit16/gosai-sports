@@ -39,7 +39,8 @@ export const products = [
       "Age Group: Suitable for teens and adults",
       "Usage: Best with tennis balls and wind balls"
     ],
-    image: "/images/pvc-cricket-bat.jpg",
+    image: "/images/pvc-cricket-bat-v2.jpg",
+    images: ["/images/pvc-cricket-bat-v2.jpg", "/images/pvc-cricket-bat-collage-v2.jpg"],
     meeshoLink: "https://www.meesho.com/gosai-plastic-cricket-bat-full-size-8pvc-plastic-cricket-bat-800-850-g-age-group-15/p/aw8r8q",
     amazonLink: "https://www.amazon.in"
   },

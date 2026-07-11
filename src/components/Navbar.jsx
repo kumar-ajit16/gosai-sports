@@ -49,9 +49,10 @@ export default function Navbar() {
               priority
             />
           </div>
-          <div style={{ display: "flex", flexDirection: "column", lineHeight: "1.1" }}>
-            <span className="gradient-text" style={{ fontSize: "20px", fontWeight: "900", letterSpacing: "0.5px" }}>GOSAI SPORTS</span>
-            <span style={{ fontSize: "10px", color: "var(--text-secondary)", fontWeight: "600", textTransform: "uppercase", letterSpacing: "1.0px" }}>Gosai Industries</span>
+          <div style={{ display: "flex", flexDirection: "column", lineHeight: "1" }}>
+            <span className="gradient-text" style={{ fontSize: "18px", fontWeight: "900", fontStyle: "italic", letterSpacing: "0.5px" }}>GOSAI SPORTS</span>
+            <span style={{ fontSize: "9px", color: "var(--text-muted)", fontWeight: "600", textTransform: "lowercase", letterSpacing: "0.5px", margin: "1px 0" }}>brand of</span>
+            <span style={{ fontSize: "11px", color: "var(--accent-primary)", fontWeight: "800", fontStyle: "italic", letterSpacing: "0.5px" }}>GOSAI INDUSTRIES</span>
           </div>
         </Link>
 

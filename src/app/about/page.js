@@ -39,7 +39,7 @@ export default function About() {
 
           <div style={{ position: "relative", width: "100%", aspectRatio: "4/3", borderRadius: "16px", overflow: "hidden", border: "1px solid var(--glass-border)", boxShadow: "var(--shadow-premium)" }}>
             <Image
-              src="/images/hero-banner.jpg"
+              src="/images/hero-banner-v2.jpg"
               alt="Gosai Industries Production Quality"
               fill
               style={{ objectFit: "cover" }}
