@@ -3,12 +3,31 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { Menu, X, Trophy, Phone, Info, ShoppingBag } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, Trophy, Phone, Info, ShoppingBag, Sun, Moon } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState("light");
+
+  // Sync state on client mount asynchronously to prevent cascading renders
+  useEffect(() => {
+    const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+    if (currentTheme !== "light") {
+      const timer = setTimeout(() => {
+        setTheme(currentTheme);
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    setTheme(nextTheme);
+  };
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -30,7 +49,11 @@ export default function Navbar() {
               priority
             />
           </div>
-          <span className="gradient-text" style={{ fontSize: "22px", fontWeight: "900" }}>GOSAI SPORTS</span>
+          <div style={{ display: "flex", flexDirection: "column", lineHeight: "1" }}>
+            <span className="gradient-text" style={{ fontSize: "18px", fontWeight: "900", fontStyle: "italic", letterSpacing: "0.5px" }}>GOSAI SPORTS</span>
+            <span style={{ fontSize: "9px", color: "var(--text-muted)", fontWeight: "600", textTransform: "lowercase", letterSpacing: "0.5px", margin: "1px 0" }}>brand of</span>
+            <span style={{ fontSize: "11px", color: "var(--accent-primary)", fontWeight: "800", fontStyle: "italic", letterSpacing: "0.5px" }}>GOSAI INDUSTRIES</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -56,6 +79,15 @@ export default function Navbar() {
             Outlet Open
           </div>
           
+          {/* Theme Toggle Button */}
+          <button
+            className="theme-toggle-btn"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+          >
+            {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
+
           {/* Mobile Menu Toggle button */}
           <button
             className="mobile-menu-btn"

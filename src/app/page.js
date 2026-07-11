@@ -37,7 +37,7 @@ export default function Home() {
               height: "100%",
               objectFit: "cover"
             }}
-            poster="/images/hero-banner.jpg"
+            poster="/images/hero-banner-v2.jpg"
           >
             <source src="https://assets.mixkit.co/videos/preview/mixkit-man-training-with-dumbbells-in-a-gym-42261-large.mp4" type="video/mp4" />
             {/* Fallback video if first fails */}
@@ -57,9 +57,12 @@ export default function Home() {
         <div className="container" style={{ position: "relative", zIndex: 10, display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "40px", alignItems: "center" }}>
           <div className="hero-content">
             <span className="hero-subtitle">Premium Athletic Outlet</span>
-            <h1 className="hero-title">
-              GEAR UP FOR <br />
-              <span className="gradient-text">ULTIMATE</span> PERFORMANCE
+            <h1 className="hero-title animate-title">
+              <span className="word w-1">GEAR</span>{" "}
+              <span className="word w-2">UP</span>{" "}
+              <span className="word w-3">FOR</span> <br />
+              <span className="word w-4 gradient-text">ULTIMATE</span>{" "}
+              <span className="word w-5">PERFORMANCE</span>
             </h1>
             <p className="hero-description">
               Explore Gosai Sports&apos; exclusive portfolio of durable, high-impact cricket gear, aerodynamic badminton equipment, and heavy-duty fitness accessories. Built for athletes who refuse to compromise.
@@ -77,10 +80,11 @@ export default function Home() {
           <div className="hero-visual" style={{ display: "flex", justifyContent: "flex-end" }}>
             <div className="hero-image-container">
               <Image
-                src="/images/hero-banner.jpg"
+                src="/images/hero-banner-v2.jpg"
                 alt="Gosai Sports Featured Showcase"
                 fill
                 style={{ objectFit: "cover" }}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
               {/* Overlay with glowing brand emblem */}

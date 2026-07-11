@@ -19,25 +19,36 @@
           fill="#FF1E27" />
   </g>
 
-  <!-- Typography "GOSAI" in modern italicized format -->
-  <text x="200" y="380" 
+  <!-- Typography matching exact logo structure requested -->
+  <text x="200" y="345" 
         font-family="'Outfit', 'Inter', 'Helvetica Neue', sans-serif" 
-        font-size="68" 
+        font-size="44" 
         font-weight="900" 
         font-style="italic" 
         fill="#FFFFFF" 
         text-anchor="middle" 
-        letter-spacing="2">
-    GOSAI
+        letter-spacing="1">
+    GOSAI SPORTS
   </text>
   
-  <text x="200" y="415" 
+  <text x="200" y="380" 
+        font-family="'Inter', 'Helvetica Neue', sans-serif" 
+        font-size="14" 
+        font-weight="500" 
+        fill="#9E9EAE" 
+        text-anchor="middle" 
+        letter-spacing="2">
+    brand of
+  </text>
+  
+  <text x="200" y="420" 
         font-family="'Outfit', 'Inter', 'Helvetica Neue', sans-serif" 
-        font-size="16" 
-        font-weight="700" 
+        font-size="22" 
+        font-weight="800" 
+        font-style="italic" 
         fill="#FF1E27" 
         text-anchor="middle" 
-        letter-spacing="8">
-    SPORTS
+        letter-spacing="2">
+    GOSAI INDUSTRIES
   </text>
 </svg>

@@ -92,8 +92,7 @@ export default function Contact() {
                 </div>
                 <div className="contact-info-content">
                   <h4>Email Address</h4>
-                  <p>support@gosaisports.com</p>
-                  <p>sales@gosaisports.com</p>
+                  <p>gosaiindustries.info@gmail.com</p>
                 </div>
               </div>
 
@@ -103,7 +102,7 @@ export default function Contact() {
                 </div>
                 <div className="contact-info-content">
                   <h4>Helpline Number</h4>
-                  <p>+91 98765 43210</p>
+                  <p>+91 95178 59087</p>
                   <p>Mon - Sat (9:00 AM - 6:00 PM IST)</p>
                 </div>
               </div>
@@ -113,10 +112,26 @@ export default function Contact() {
                   <MapPin size={22} />
                 </div>
                 <div className="contact-info-content">
-                  <h4>Main Outlet Location</h4>
-                  <p>Gosai Sports Outlet, Sports Plaza, Sector 12,</p>
-                  <p>New Delhi, DL 110001, India</p>
+                  <h4>Factory & Office</h4>
+                  <p>15 A Dada Colony, Industrial Area,</p>
+                  <p>Jalandhar, Punjab 144004</p>
+                  <p style={{ color: "var(--accent-primary)", fontSize: "12px", marginTop: "4px", fontWeight: "600" }}>GSTIN: 03JNNPK2023Q1ZM</p>
                 </div>
+              </div>
+            </div>
+
+            <div style={{ marginTop: "32px" }}>
+              <h4 style={{ fontSize: "14px", fontWeight: "700", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>Connect on Social Media</h4>
+              <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+                <a href="https://www.linkedin.com/company/gosaiindustries/" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ padding: "10px 14px", display: "flex", alignItems: "center", gap: "8px" }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> LinkedIn
+                </a>
+                <a href="https://www.instagram.com/gosai.industries?igsh=N2owb201dXRvODR4" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ padding: "10px 14px", display: "flex", alignItems: "center", gap: "8px" }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg> Instagram
+                </a>
+                <a href="https://www.facebook.com/share/1GR9PGWJJ5/" target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ padding: "10px 14px", display: "flex", alignItems: "center", gap: "8px" }}>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg> Facebook
+                </a>
               </div>
             </div>
 
