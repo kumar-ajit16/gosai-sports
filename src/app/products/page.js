@@ -32,6 +32,7 @@ function ProductsCatalog() {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setSortBy] = useState("default");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [activeImage, setActiveImage] = useState("");
 
   // Handle category sidebar click
   const handleCategorySelect = (categoryId) => {
@@ -208,7 +209,7 @@ function ProductsCatalog() {
                     {/* Image Wrapper */}
                     <div 
                       className="product-image-wrapper"
-                      onClick={() => setSelectedProduct(product)}
+                      onClick={() => { setSelectedProduct(product); setActiveImage(product.image); }}
                     >
                       <Image
                         src={product.image}
@@ -263,7 +264,7 @@ function ProductsCatalog() {
 
                     <a 
                       href="#" 
-                      onClick={(e) => { e.preventDefault(); setSelectedProduct(product); }} 
+                      onClick={(e) => { e.preventDefault(); setSelectedProduct(product); setActiveImage(product.image); }} 
                       className="product-name"
                     >
                       {product.name}
@@ -299,24 +300,59 @@ function ProductsCatalog() {
 
       {/* Product Detail Modal */}
       {selectedProduct && (
-        <div className="modal-overlay" onClick={() => setSelectedProduct(null)}>
+        <div className="modal-overlay" onClick={() => { setSelectedProduct(null); setActiveImage(""); }}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={() => setSelectedProduct(null)}>
+            <button className="modal-close" onClick={() => { setSelectedProduct(null); setActiveImage(""); }}>
               <X size={20} />
             </button>
 
             <div className="modal-body">
-              <div className="modal-img-container">
-                <Image
-                  src={selectedProduct.image}
-                  alt={selectedProduct.name}
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-                <div className="product-rating" style={{ top: "16px", left: "16px" }}>
-                  <Star size={12} fill="#FFB800" stroke="none" />
-                  <span>{selectedProduct.rating} ({selectedProduct.reviews} reviews)</span>
+              <div className="modal-img-container" style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ position: "relative", width: "100%", flex: 1, minHeight: "300px" }}>
+                  <Image
+                    src={activeImage || selectedProduct.image}
+                    alt={selectedProduct.name}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="product-rating" style={{ top: "16px", left: "16px" }}>
+                    <Star size={12} fill="#FFB800" stroke="none" />
+                    <span>{selectedProduct.rating} ({selectedProduct.reviews} reviews)</span>
+                  </div>
                 </div>
+                
+                {/* Image Gallery Thumbnails */}
+                {selectedProduct.images && selectedProduct.images.length > 1 && (
+                  <div style={{ display: "flex", gap: "8px", padding: "12px", background: "rgba(0,0,0,0.1)", borderTop: "1px solid rgba(255,255,255,0.05)", justifyContent: "center" }}>
+                    {selectedProduct.images.map((imgUrl, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => setActiveImage(imgUrl)}
+                        style={{
+                          position: "relative",
+                          width: "50px",
+                          height: "50px",
+                          borderRadius: "6px",
+                          overflow: "hidden",
+                          border: activeImage === imgUrl ? "2px solid var(--accent-primary)" : "1px solid rgba(255,255,255,0.15)",
+                          cursor: "pointer",
+                          background: "none",
+                          padding: 0,
+                          transition: "all 0.2s ease"
+                        }}
+                      >
+                        <Image
+                          src={imgUrl}
+                          alt={`${selectedProduct.name} View ${idx + 1}`}
+                          fill
+                          style={{ objectFit: "cover" }}
+                          sizes="50px"
+                        />
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
 
               <div className="modal-info">
