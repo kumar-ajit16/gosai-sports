@@ -42,7 +42,7 @@ export default function Navbar() {
         <Link href="/" className="nav-logo" onClick={() => setMobileMenuOpen(false)}>
           <div style={{ position: "relative", width: "42px", height: "42px" }}>
             <Image 
-              src="/images/logo.svg" 
+              src="/images/gosai-logo.png" 
               alt="Gosai Sports Logo" 
               fill
               style={{ objectFit: "contain" }}
