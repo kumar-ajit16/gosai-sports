@@ -54,7 +54,7 @@ export default function Home() {
           }}></div>
         </div>
 
-        <div className="container" style={{ position: "relative", zIndex: 10, display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "40px", alignItems: "center" }}>
+        <div className="container hero-grid">
           <div className="hero-content">
             <span className="hero-subtitle">Premium Athletic Outlet</span>
             <h1 className="hero-title animate-title">
@@ -115,7 +115,7 @@ export default function Home() {
       {/* Brand Values Callouts */}
       <section className="section" style={{ background: "var(--bg-secondary)", borderTop: "1px solid var(--glass-border)", borderBottom: "1px solid var(--glass-border)", padding: "40px 0" }}>
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "30px" }}>
+          <div className="features-grid">
             <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
               <div style={{ background: "rgba(255,30,39,0.1)", color: "var(--accent-primary)", padding: "12px", borderRadius: "12px" }}>
                 <ShieldCheck size={28} />
