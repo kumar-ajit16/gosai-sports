@@ -3,16 +3,14 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, CheckCircle, Info } from "lucide-react";
 
-// Google Form Configuration Keys
-// Replace these with your actual Google Form Action URL and field Entry IDs.
 const GOOGLE_FORM_CONFIG = {
-  // Example: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfXXXXXXXXXXXXX/formResponse"
-  actionUrl: "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdyH9T1x3lqJ61N2U_wYn8G-r-7BveqM-Vd3w0o2wzO0hH9qQ/formResponse", 
+  actionUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeRNFYs_H41y3AGQ-0x51rKNaYuBLCaguuHyHQSh4UlmiAgzw/formResponse", 
   fields: {
-    name: "entry.1000001",    // Replace with your Form Name field entry ID
-    email: "entry.1000002",   // Replace with your Form Email field entry ID
-    subject: "entry.1000003", // Replace with your Form Subject field entry ID
-    message: "entry.1000004"  // Replace with your Form Message field entry ID
+    name: "entry.2144736350",
+    email: "entry.700747803",
+    phone: "entry.344020609",
+    subject: "entry.1707630567",
+    message: "entry.968865221"
   }
 };
 
@@ -20,6 +18,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     subject: "",
     message: ""
   });
@@ -39,6 +38,7 @@ export default function Contact() {
     const formParams = new URLSearchParams();
     formParams.append(GOOGLE_FORM_CONFIG.fields.name, formData.name);
     formParams.append(GOOGLE_FORM_CONFIG.fields.email, formData.email);
+    formParams.append(GOOGLE_FORM_CONFIG.fields.phone, formData.phone);
     formParams.append(GOOGLE_FORM_CONFIG.fields.subject, formData.subject);
     formParams.append(GOOGLE_FORM_CONFIG.fields.message, formData.message);
 
@@ -55,7 +55,7 @@ export default function Contact() {
       });
 
       setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
     } catch (err) {
       console.error("Submission error: ", err);
       setStatus("error");
@@ -135,22 +135,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Google Forms Connection Instructions Box */}
-            <div className="setup-instructions">
-              <div style={{ display: "flex", gap: "8px", alignItems: "center", marginBottom: "8px" }}>
-                <Info size={16} style={{ color: "#00BFA5" }} />
-                <h5 style={{ margin: 0 }}>Connecting Your Google Form</h5>
-              </div>
-              <p style={{ marginBottom: "8px" }}>
-                To receive form entries directly in your Google Sheets:
-              </p>
-              <ol style={{ paddingLeft: "18px", display: "flex", flexDirection: "column", gap: "6px" }}>
-                <li>Open your Google Form and preview it.</li>
-                <li>Inspect input fields in your browser and locate their name attributes (e.g., <code>entry.1234567890</code>).</li>
-                <li>Open <code>src/app/contact/page.js</code> in your editor.</li>
-                <li>Replace the <code>actionUrl</code> and <code>fields</code> values inside <code>GOOGLE_FORM_CONFIG</code> at the top.</li>
-              </ol>
-            </div>
           </div>
 
           {/* Right Side: Form Panel */}
@@ -197,6 +181,21 @@ export default function Contact() {
                     placeholder="Enter your email address"
                     className="form-control"
                     value={formData.email}
+                    onChange={handleChange}
+                    disabled={status === "sending"}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label className="form-label" htmlFor="phone">Phone / Mobile Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    placeholder="Enter your contact number (e.g. +91 9517859087)"
+                    className="form-control"
+                    value={formData.phone}
                     onChange={handleChange}
                     disabled={status === "sending"}
                   />
