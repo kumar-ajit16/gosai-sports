@@ -13,7 +13,7 @@ export default function Footer() {
             <Link href="/" className="footer-logo">
               <div style={{ position: "relative", width: "36px", height: "36px" }}>
                 <Image 
-                  src="/images/logo.svg" 
+                  src="/images/gosai-logo.png" 
                   alt="Gosai Sports Logo" 
                   fill
                   style={{ objectFit: "contain" }}

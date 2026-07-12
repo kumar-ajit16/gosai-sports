@@ -17,7 +17,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Gosai Industries | Premium Sports & Fitness Gear",
+  title: "Gosai Sports | Premium Sports & Fitness Gear",
   description: "Browse premium PVC cricket bats, pro badminton rackets, training gear, dumbbells, and protective sports equipment manufactured by Gosai Industries. Buy on Amazon and Meesho.",
   keywords: "sports equipment, pvc cricket bat, badminton racket, hand gripper, skipping rope, dumbbells, gosai industries, gosai sports",
 };
