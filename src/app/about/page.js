@@ -211,7 +211,7 @@ export default function About() {
         </div>
 
         {/* Story Progress Stats */}
-        <div className="glass-panel" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "20px", textAlign: "center", padding: "40px" }}>
+        <div className="glass-panel stats-grid" style={{ textAlign: "center", padding: "40px" }}>
           <div>
             <h4 style={{ fontSize: "36px", fontWeight: "900", color: "var(--accent-primary)" }}>9+</h4>
             <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "var(--text-secondary)", marginTop: "4px" }}>Premium Products</p>
