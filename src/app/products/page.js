@@ -97,6 +97,37 @@ function ProductsCatalog() {
 
   return (
     <section className="section" style={{ minHeight: "80vh" }}>
+      {/* JSON-LD ItemList Schema for rich search indexing */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "Gosai Sports Equipment Catalog",
+            "description": "High-performance sports equipment including PVC cricket bats, professional badminton rackets, and fitness gear.",
+            "url": "https://gosaisports.com/products",
+            "numberOfItems": products.length,
+            "itemListElement": products.map((product, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "Product",
+                "name": product.name,
+                "description": product.desc,
+                "image": `https://gosaisports.com${product.image}`,
+                "offers": {
+                  "@type": "AggregateOffer",
+                  "priceCurrency": "INR",
+                  "lowPrice": "250",
+                  "highPrice": "1500",
+                  "offerCount": "2"
+                }
+              }
+            }))
+          })
+        }}
+      />
       <div className="container">
         {/* Page Title Header */}
         <div style={{ marginBottom: "40px", textAlign: "center" }}>

@@ -2,9 +2,44 @@ import Image from "next/image";
 import Link from "next/link";
 import { ShieldCheck, Target, Award, Users, ArrowRight } from "lucide-react";
 
+export const metadata = {
+  title: "About Us",
+  description: "Learn about Gosai Industries, a leading manufacturer of premium PVC cricket bats, professional athletic gear, and home gym accessories in Jalandhar, Punjab.",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
 export default function About() {
   return (
     <section className="section">
+      {/* JSON-LD Organization Schema for Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Gosai Industries",
+            "alternateName": "Gosai Sports",
+            "url": "https://gosaisports.com",
+            "logo": "https://gosaisports.com/images/logo.svg",
+            "sameAs": [
+              "https://www.instagram.com/gosai.industries?igsh=N2owb201dXRvODR4",
+              "https://www.facebook.com/share/1GR9PGWJJ5/",
+              "https://www.linkedin.com/company/gosaiindustries/"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-95178-59087",
+              "contactType": "customer service",
+              "email": "gosaiindustries.info@gmail.com",
+              "areaServed": "IN",
+              "availableLanguage": ["en", "hi", "pa"]
+            }
+          })
+        }}
+      />
       <div className="container">
         {/* Page Title */}
         <div style={{ marginBottom: "60px", textAlign: "center" }}>
