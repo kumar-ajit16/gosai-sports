@@ -85,8 +85,8 @@ export default function Contact() {
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "31.329584",
-              "longitude": "75.599723"
+              "latitude": "31.3532724",
+              "longitude": "75.5743278"
             },
             "url": "https://gosaisports.com",
             "openingHoursSpecification": {
@@ -148,7 +148,7 @@ export default function Contact() {
                 <div className="contact-info-content">
                   <h4>Factory & Office</h4>
                   <a 
-                    href="https://maps.app.goo.gl/3NcrU1BcthdX86de7" 
+                    href="https://www.google.com/maps/place/GOSAI+INDUSTRIES/@31.3532724,75.5743278,17z/data=!3m1!4b1!4m6!3m5!1s0x391a5bc6ac6a083b:0x1fced028748d7258!8m2!3d31.3532724!4d75.5743278!16s%2Fg%2F11wxh737t8" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="contact-address-link"
@@ -297,7 +297,7 @@ export default function Contact() {
         {/* Interactive Google Map Embed */}
         <div style={{ marginTop: "60px", borderRadius: "16px", overflow: "hidden", border: "1px solid var(--glass-border)", boxShadow: "var(--shadow-premium)", height: "350px", position: "relative" }}>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.06734107611!2d75.59972337628859!3d31.32958447430159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5fcd26ad005f%3A0xe54d24177b9ab3c9!2s15a%2C%20Dada%20Colony%2C%20Industrial%20Area%2C%20Jalandhar%2C%20Punjab%20144004!5e0!3m2!1sen!2sin!4v1719999999999!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3406.877239103212!2d75.57175287629007!3d31.353276974288077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5bc6ac6a083b%3A0x1fced028748d7258!2sGOSAI%20INDUSTRIES!5e0!3m2!1sen!2sin!4v1721099999999!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}

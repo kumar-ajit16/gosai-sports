@@ -142,23 +142,23 @@ export default function About() {
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "30px", justifyContent: "center" }}>
             {/* Ajit Kumar */}
-            <div className="glass-panel" style={{ textAlign: "center", padding: "40px 24px", display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <div style={{ 
+            <div className="glass-panel team-card-3d" style={{ textAlign: "center", padding: "40px 24px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <div className="team-avatar-container" style={{ 
+                position: "relative",
                 width: "120px", 
                 height: "120px", 
                 borderRadius: "50%", 
-                background: "linear-gradient(135deg, rgba(255, 30, 39, 0.25) 0%, rgba(10, 10, 12, 0.9) 100%)",
                 border: "2px solid rgba(255, 30, 39, 0.4)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "36px",
-                fontWeight: "800",
-                color: "var(--accent-primary)",
-                textShadow: "0 0 10px rgba(255, 30, 39, 0.3)",
+                overflow: "hidden",
+                boxShadow: "0 0 20px rgba(255, 30, 39, 0.15)",
                 marginBottom: "20px"
               }}>
-                AK
+                <Image
+                  src="/images/ceo-ajit-kumar-v2.jpg"
+                  alt="Ajit Kumar, Founder & CEO"
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
               </div>
               <h3 style={{ fontSize: "20px", fontWeight: "800", marginBottom: "6px" }}>AJIT KUMAR</h3>
               <p style={{ color: "var(--accent-primary)", fontSize: "14px", fontWeight: "600", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "16px" }}>Founder & CEO</p>
@@ -177,23 +177,23 @@ export default function About() {
             </div>
 
             {/* Uday Kumar Giri */}
-            <div className="glass-panel" style={{ textAlign: "center", padding: "40px 24px", display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <div style={{ 
+            <div className="glass-panel team-card-3d" style={{ textAlign: "center", padding: "40px 24px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <div className="team-avatar-container" style={{ 
+                position: "relative",
                 width: "120px", 
                 height: "120px", 
                 borderRadius: "50%", 
-                background: "linear-gradient(135deg, rgba(255, 30, 39, 0.25) 0%, rgba(10, 10, 12, 0.9) 100%)",
                 border: "2px solid rgba(255, 30, 39, 0.4)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "36px",
-                fontWeight: "800",
-                color: "var(--accent-primary)",
-                textShadow: "0 0 10px rgba(255, 30, 39, 0.3)",
+                overflow: "hidden",
+                boxShadow: "0 0 20px rgba(255, 30, 39, 0.15)",
                 marginBottom: "20px"
               }}>
-                UK
+                <Image
+                  src="/images/coo-uday-kumar-v2.jpg"
+                  alt="Uday Kumar Giri, Co-founder & COO"
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
               </div>
               <h3 style={{ fontSize: "20px", fontWeight: "800", marginBottom: "6px" }}>UDAY KUMAR GIRI</h3>
               <p style={{ color: "var(--accent-primary)", fontSize: "14px", fontWeight: "600", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "16px" }}>Co-founder & COO</p>
@@ -212,28 +212,31 @@ export default function About() {
             </div>
 
             {/* Nirbhay Giri */}
-            <div className="glass-panel" style={{ textAlign: "center", padding: "40px 24px", display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <div style={{ 
+            <div className="glass-panel team-card-3d" style={{ textAlign: "center", padding: "40px 24px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <div className="team-avatar-container" style={{ 
+                position: "relative",
                 width: "120px", 
                 height: "120px", 
                 borderRadius: "50%", 
-                background: "linear-gradient(135deg, rgba(255, 30, 39, 0.25) 0%, rgba(10, 10, 12, 0.9) 100%)",
                 border: "2px solid rgba(255, 30, 39, 0.4)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "36px",
-                fontWeight: "800",
-                color: "var(--accent-primary)",
-                textShadow: "0 0 10px rgba(255, 30, 39, 0.3)",
+                overflow: "hidden",
+                boxShadow: "0 0 20px rgba(255, 30, 39, 0.15)",
                 marginBottom: "20px"
               }}>
-                NG
+                <Image
+                  src="/images/coo-nirbhay-giri-v2.jpg"
+                  alt="Nirbhay Giri, Co-founder & COO"
+                  fill
+                  style={{ objectFit: "cover" }}
+                />
               </div>
               <h3 style={{ fontSize: "20px", fontWeight: "800", marginBottom: "6px" }}>NIRBHAY GIRI</h3>
               <p style={{ color: "var(--accent-primary)", fontSize: "14px", fontWeight: "600", letterSpacing: "1px", textTransform: "uppercase", marginBottom: "16px" }}>Co-founder & COO</p>
               
               <div style={{ display: "flex", gap: "16px", marginTop: "auto", justifyContent: "center" }}>
+                <a href="https://www.linkedin.com/company/gosaiindustries/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-secondary)", transition: "var(--transition-fast)" }} aria-label="LinkedIn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
                 <a href="https://www.instagram.com/giri_nirbhay?igsh=NGNycnVzbnNwZTZt" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-secondary)", transition: "var(--transition-fast)" }} aria-label="Instagram">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
