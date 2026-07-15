@@ -20,7 +20,7 @@ export default function Footer() {
                 />
               </div>
               <div style={{ display: "flex", flexDirection: "column", lineHeight: "1" }}>
-                <span className="gradient-text" style={{ fontSize: "15px", fontWeight: "900", fontStyle: "italic", letterSpacing: "0.5px" }}>GOSAI SPORTS</span>
+                <span className="gradient-text" style={{ fontSize: "15px", fontWeight: "900", fontStyle: "italic", letterSpacing: "0.5px", paddingRight: "4px", display: "inline-block" }}>GOSAI SPORTS</span>
                 <span style={{ fontSize: "8px", color: "var(--text-muted)", fontWeight: "600", textTransform: "lowercase", letterSpacing: "0.5px", margin: "1px 0" }}>brand of</span>
                 <span style={{ fontSize: "9px", color: "var(--accent-primary)", fontWeight: "800", fontStyle: "italic", letterSpacing: "0.5px" }}>GOSAI INDUSTRIES</span>
               </div>
@@ -80,7 +80,7 @@ export default function Footer() {
               <li style={{ color: "var(--text-secondary)", fontSize: "13px", display: "flex", gap: "6px", alignItems: "flex-start" }}>
                 <MapPin size={14} style={{ color: "var(--accent-primary)", flexShrink: 0, marginTop: "2px" }} />
                 <a 
-                  href="https://maps.app.goo.gl/3NcrU1BcthdX86de7" 
+                  href="https://www.google.com/maps/place/GOSAI+INDUSTRIES/@31.3532724,75.5743278,17z/data=!3m1!4b1!4m6!3m5!1s0x391a5bc6ac6a083b:0x1fced028748d7258!8m2!3d31.3532724!4d75.5743278!16s%2Fg%2F11wxh737t8" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="footer-link"
