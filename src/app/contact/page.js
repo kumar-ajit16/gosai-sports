@@ -64,6 +64,40 @@ export default function Contact() {
 
   return (
     <section className="section">
+      {/* JSON-LD LocalBusiness Schema for Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Gosai Industries (Gosai Sports)",
+            "image": "https://gosaisports.com/images/hero-banner-v2.jpg",
+            "telephone": "+91-95178-59087",
+            "email": "gosaiindustries.info@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "15 A Dada Colony, Industrial Area",
+              "addressLocality": "Jalandhar",
+              "addressRegion": "Punjab",
+              "postalCode": "144004",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "31.329584",
+              "longitude": "75.599723"
+            },
+            "url": "https://gosaisports.com",
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "18:00"
+            }
+          })
+        }}
+      />
       <div className="container">
         {/* Title Banner */}
         <div style={{ marginBottom: "60px", textAlign: "center" }}>
@@ -113,9 +147,19 @@ export default function Contact() {
                 </div>
                 <div className="contact-info-content">
                   <h4>Factory & Office</h4>
-                  <p>15 A Dada Colony, Industrial Area,</p>
-                  <p>Jalandhar, Punjab 144004</p>
-                  <p style={{ color: "var(--accent-primary)", fontSize: "12px", marginTop: "4px", fontWeight: "600" }}>GSTIN: 03JNNPK2023Q1ZM</p>
+                  <a 
+                    href="https://maps.app.goo.gl/3NcrU1BcthdX86de7" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="contact-address-link"
+                  >
+                    <p style={{ margin: 0 }}>15 A Dada Colony, Industrial Area,</p>
+                    <p style={{ margin: 0 }}>Jalandhar, Punjab 144004</p>
+                    <span style={{ fontSize: "12px", color: "var(--accent-primary)", display: "inline-flex", alignItems: "center", gap: "4px", marginTop: "4px", fontWeight: "600" }}>
+                      View on Google Maps ↗
+                    </span>
+                  </a>
+                  <p style={{ color: "var(--text-muted)", fontSize: "12px", marginTop: "8px", fontWeight: "600" }}>GSTIN: 03JNNPK2023Q1ZM</p>
                 </div>
               </div>
             </div>
@@ -248,6 +292,20 @@ export default function Contact() {
               </form>
             )}
           </div>
+        </div>
+
+        {/* Interactive Google Map Embed */}
+        <div style={{ marginTop: "60px", borderRadius: "16px", overflow: "hidden", border: "1px solid var(--glass-border)", boxShadow: "var(--shadow-premium)", height: "350px", position: "relative" }}>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3408.06734107611!2d75.59972337628859!3d31.32958447430159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5fcd26ad005f%3A0xe54d24177b9ab3c9!2s15a%2C%20Dada%20Colony%2C%20Industrial%20Area%2C%20Jalandhar%2C%20Punjab%20144004!5e0!3m2!1sen!2sin!4v1719999999999!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Gosai Industries Location Map"
+          ></iframe>
         </div>
       </div>
     </section>

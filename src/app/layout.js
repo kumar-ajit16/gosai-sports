@@ -17,9 +17,52 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Gosai Sports | Premium Sports & Fitness Gear",
+  metadataBase: new URL("https://gosaisports.com"),
+  title: {
+    default: "Gosai Sports | Premium Sports & Fitness Gear by Gosai Industries",
+    template: "%s | Gosai Sports"
+  },
   description: "Browse premium PVC cricket bats, pro badminton rackets, training gear, dumbbells, and protective sports equipment manufactured by Gosai Industries. Buy on Amazon and Meesho.",
-  keywords: "sports equipment, pvc cricket bat, badminton racket, hand gripper, skipping rope, dumbbells, gosai industries, gosai sports",
+  keywords: ["sports equipment", "pvc cricket bat", "badminton racket", "hand gripper", "skipping rope", "dumbbells", "gosai industries", "gosai sports", "cricket bats Jalandhar", "sports factory Punjab"],
+  authors: [{ name: "Gosai Industries" }],
+  creator: "Gosai Industries",
+  publisher: "Gosai Industries",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Gosai Sports | Premium Sports & Fitness Gear",
+    description: "Browse high-impact PVC cricket bats and fitness gear manufactured by Gosai Industries. Available on Amazon & Meesho.",
+    url: "https://gosaisports.com",
+    siteName: "Gosai Sports",
+    images: [
+      {
+        url: "/images/hero-banner-v2.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Gosai Sports Showcase",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gosai Sports | Premium Sports & Fitness Gear",
+    description: "High-performance sports gear and fitness accessories manufactured by Gosai Industries.",
+    images: ["/images/hero-banner-v2.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {

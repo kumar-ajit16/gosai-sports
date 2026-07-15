@@ -1328,3 +1328,19 @@ textarea.form-control {
     padding: 30px 16px !important;
   }
 }
+
+/* Contact Address Link Hover Style */
+.contact-address-link {
+  display: block;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.contact-address-link:hover {
+  color: var(--accent-primary) !important;
+}
+
+.contact-address-link:hover span {
+  text-decoration: underline;
+}
