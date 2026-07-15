@@ -14,6 +14,23 @@ export default function Home() {
 
   return (
     <div>
+      {/* JSON-LD WebSite Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Gosai Sports",
+            "url": "https://gosaisports.com",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://gosaisports.com/products?search={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="hero-wrapper">
         {/* Dynamic Video / Image Background */}

@@ -79,7 +79,15 @@ export default function Footer() {
             <ul className="footer-links">
               <li style={{ color: "var(--text-secondary)", fontSize: "13px", display: "flex", gap: "6px", alignItems: "flex-start" }}>
                 <MapPin size={14} style={{ color: "var(--accent-primary)", flexShrink: 0, marginTop: "2px" }} />
-                <span>15 A Dada Colony, Industrial Area Jalandhar, Punjab 144004</span>
+                <a 
+                  href="https://maps.app.goo.gl/3NcrU1BcthdX86de7" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-link"
+                  style={{ display: "inline" }}
+                >
+                  15 A Dada Colony, Industrial Area Jalandhar, Punjab 144004
+                </a>
               </li>
               <li style={{ color: "var(--text-secondary)", fontSize: "13px", display: "flex", gap: "6px", alignItems: "center" }}>
                 <Phone size={14} style={{ color: "var(--accent-primary)" }} />
