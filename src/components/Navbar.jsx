@@ -50,7 +50,7 @@ export default function Navbar() {
             />
           </div>
           <div style={{ display: "flex", flexDirection: "column", lineHeight: "1" }}>
-            <span className="gradient-text" style={{ fontSize: "18px", fontWeight: "900", fontStyle: "italic", letterSpacing: "0.5px" }}>GOSAI SPORTS</span>
+            <span className="gradient-text" style={{ fontSize: "18px", fontWeight: "900", fontStyle: "italic", letterSpacing: "0.5px", paddingRight: "4px", display: "inline-block" }}>GOSAI SPORTS</span>
             <span style={{ fontSize: "9px", color: "var(--text-muted)", fontWeight: "600", textTransform: "lowercase", letterSpacing: "0.5px", margin: "1px 0" }}>brand of</span>
             <span style={{ fontSize: "11px", color: "var(--accent-primary)", fontWeight: "800", fontStyle: "italic", letterSpacing: "0.5px" }}>GOSAI INDUSTRIES</span>
           </div>
