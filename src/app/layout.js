@@ -1,6 +1,7 @@
 import { Outfit, Inter } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -82,6 +83,19 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body style={{ display: "flex", flexDirection: "column", minHeight: "100vh", backgroundColor: "var(--bg-primary)" }}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-RQEE4JYT3J"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-RQEE4JYT3J');
+          `}
+        </Script>
         <Navbar />
         <main style={{ flex: 1, display: "flex", flexDirection: "column" }}>
           {children}
