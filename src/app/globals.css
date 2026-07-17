@@ -1447,6 +1447,58 @@ textarea.form-control {
     gap: 16px !important;
     padding: 24px 12px !important;
   }
+  
+  /* Hero typography and card responsiveness for small mobile viewports */
+  .hero-subtitle {
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-title {
+    font-size: 32px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 16px !important;
+  }
+  
+  .hero-description {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .hero-visual {
+    height: 280px !important;
+    margin-top: 24px !important;
+    margin-bottom: 36px !important;
+  }
+  
+  .hero-image-container {
+    height: 240px !important;
+  }
+  
+  .hero-badge-card {
+    padding: 8px 14px !important;
+    transform: translate(-50%, 20px) translateZ(30px) !important;
+  }
+  
+  .hero-badge-card h4 {
+    font-size: 12px !important;
+  }
+  
+  .hero-badge-card p {
+    font-size: 10px !important;
+  }
+  
+  .hero-buttons {
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+  
+  .btn-primary, .btn-outline {
+    padding: 10px 20px !important;
+    font-size: 14px !important;
+  }
 }
 
 /* Hero Badge Card Responsive Overlay positioning */
