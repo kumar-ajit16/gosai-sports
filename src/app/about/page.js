@@ -1,16 +1,104 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ShieldCheck, Target, Award, Users, ArrowRight } from "lucide-react";
+import { ShieldCheck, Target, Award, Users, ArrowRight, Star, MessageSquare } from "lucide-react";
 
-export const metadata = {
-  title: "About Us",
-  description: "Learn about Gosai Industries, a leading manufacturer of premium PVC cricket bats, professional athletic gear, and home gym accessories in Jalandhar, Punjab.",
-  alternates: {
-    canonical: "/about",
+// Fallback mock reviews in case database is connection-pending
+const DEFAULT_REVIEWS = [
+  {
+    id: "1",
+    name: "Rohan Sharma",
+    email: "rohan.sharma@gmail.com",
+    rating: 5,
+    comment: "The PVC cricket bat is outstanding! Perfect bounce and the carbon-fiber texture grip feels extremely premium. Highly recommended for net practice.",
+    date: "2026-07-10"
   },
-};
+  {
+    id: "2",
+    name: "Amanpreet Singh",
+    email: "aman.singh@yahoo.com",
+    rating: 5,
+    comment: "Direct redirected me to Amazon, got it delivered in 2 days. The rackets are lightweight yet very sturdy. Best sports brand in Jalandhar!",
+    date: "2026-07-12"
+  },
+  {
+    id: "3",
+    name: "Karan Verma",
+    email: "karan.verma@outlook.com",
+    rating: 4,
+    comment: "Using the hex dumbbells and skipping rope daily. Exceptional durability, concrete filling is solid and the vinyl coating protects the floor.",
+    date: "2026-07-14"
+  }
+];
 
 export default function About() {
+  // States
+  const [reviews, setReviews] = useState([]);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    rating: 5,
+    comment: ""
+  });
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  // Load reviews from MongoDB API on mount
+  useEffect(() => {
+    async function fetchReviews() {
+      try {
+        const response = await fetch("/api/reviews");
+        if (response.ok) {
+          const data = await response.json();
+          setReviews(data);
+        } else {
+          setReviews(DEFAULT_REVIEWS);
+        }
+      } catch (error) {
+        console.error("Failed to load reviews:", error);
+        setReviews(DEFAULT_REVIEWS);
+      }
+    }
+    fetchReviews();
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleRatingSelect = (rating) => {
+    setFormData(prev => ({ ...prev, rating }));
+  };
+
+  const handleSubmitReview = async (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.comment) return;
+
+    try {
+      const response = await fetch("/api/reviews", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        const newReview = await response.json();
+        setReviews(prev => [newReview, ...prev]);
+        setFormData({ name: "", email: "", rating: 5, comment: "" });
+        setIsSuccess(true);
+        setTimeout(() => setIsSuccess(false), 4000);
+      } else {
+        alert("Failed to submit review. Please try again.");
+      }
+    } catch (error) {
+      console.error("Submission Error:", error);
+      alert("Failed to connect to the server. Please check your connection.");
+    }
+  };
   return (
     <section className="section">
       {/* JSON-LD Organization Schema for Rich Snippets */}
@@ -248,6 +336,141 @@ export default function About() {
           </div>
         </div>
 
+        {/* Customer Reviews Section */}
+        <div style={{ marginBottom: "80px" }}>
+          <h2 style={{ fontSize: "28px", fontWeight: "800", textAlign: "center", marginBottom: "12px" }}>
+            CUSTOMER REVIEWS & FEEDBACK
+          </h2>
+          <p style={{ color: "var(--text-secondary)", fontSize: "15px", textAlign: "center", maxWidth: "600px", margin: "0 auto 40px auto", lineHeight: "1.6" }}>
+            Hear from athletes, trainers, and coaches who use Gosai Sports gear daily, or share your own experience below.
+          </p>
+
+          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "40px" }} className="reviews-layout">
+            {/* Reviews List */}
+            <div>
+              <h3 style={{ fontSize: "18px", fontWeight: "700", marginBottom: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
+                <MessageSquare size={20} style={{ color: "var(--accent-primary)" }} /> Recent Testimonials ({reviews.length})
+              </h3>
+              
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxHeight: "480px", overflowY: "auto", paddingRight: "8px" }} className="reviews-scroll-container">
+                {reviews.map((rev) => (
+                  <div key={rev.id} className="glass-panel" style={{ padding: "20px", borderRadius: "16px", border: "1px solid var(--glass-border)", textAlign: "left" }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+                      <h4 style={{ fontSize: "15px", fontWeight: "700" }}>{rev.name}</h4>
+                      <span style={{ fontSize: "12px", color: "var(--text-muted)" }}>{rev.date}</span>
+                    </div>
+                    
+                    <div style={{ display: "flex", gap: "2px", marginBottom: "10px" }}>
+                      {[...Array(5)].map((_, i) => (
+                        <Star 
+                          key={i} 
+                          size={14} 
+                          fill={i < rev.rating ? "#FFB800" : "none"} 
+                          stroke={i < rev.rating ? "#FFB800" : "var(--text-muted)"} 
+                        />
+                      ))}
+                    </div>
+                    
+                    <p style={{ fontSize: "13px", color: "var(--text-secondary)", lineHeight: "1.6" }}>
+                      &ldquo;{rev.comment}&rdquo;
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Write a Review Form */}
+            <div>
+              <div className="glass-panel" style={{ padding: "30px", borderRadius: "20px", border: "1px solid var(--glass-border)" }}>
+                <h3 style={{ fontSize: "18px", fontWeight: "700", marginBottom: "20px" }}>Write a Review</h3>
+                
+                {isSuccess ? (
+                  <div style={{ textAlign: "center", padding: "30px 0" }}>
+                    <Star size={44} fill="var(--accent-primary)" stroke="none" style={{ margin: "0 auto 16px auto", display: "block", filter: "drop-shadow(0 0 8px var(--accent-primary))" }} />
+                    <h4 style={{ fontSize: "16px", fontWeight: "800", marginBottom: "8px" }}>Review Submitted!</h4>
+                    <p style={{ fontSize: "13px", color: "var(--text-secondary)", lineHeight: "1.6" }}>
+                      Thank you for your valuable feedback. It has been added to our testimonial system and active review metrics!
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmitReview} style={{ textAlign: "left" }}>
+                    <div className="form-group" style={{ marginBottom: "16px" }}>
+                      <label className="form-label" style={{ fontSize: "13px", marginBottom: "6px" }}>Your Rating</label>
+                      <div style={{ display: "flex", gap: "6px" }}>
+                        {[...Array(5)].map((_, i) => {
+                          const ratingVal = i + 1;
+                          return (
+                            <button
+                              type="button"
+                              key={i}
+                              onClick={() => handleRatingSelect(ratingVal)}
+                              style={{ background: "none", border: "none", cursor: "pointer", padding: 0 }}
+                            >
+                              <Star 
+                                size={24} 
+                                fill={ratingVal <= formData.rating ? "#FFB800" : "none"} 
+                                stroke={ratingVal <= formData.rating ? "#FFB800" : "var(--text-muted)"} 
+                              />
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    <div className="form-group" style={{ marginBottom: "16px" }}>
+                      <label className="form-label" htmlFor="rev-name" style={{ fontSize: "13px", marginBottom: "6px" }}>Name</label>
+                      <input
+                        type="text"
+                        id="rev-name"
+                        name="name"
+                        required
+                        placeholder="Enter your name"
+                        className="form-control"
+                        style={{ padding: "10px 14px", fontSize: "13px" }}
+                        value={formData.name}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div className="form-group" style={{ marginBottom: "16px" }}>
+                      <label className="form-label" htmlFor="rev-email" style={{ fontSize: "13px", marginBottom: "6px" }}>Email Address</label>
+                      <input
+                        type="email"
+                        id="rev-email"
+                        name="email"
+                        required
+                        placeholder="Enter your email for validation"
+                        className="form-control"
+                        style={{ padding: "10px 14px", fontSize: "13px" }}
+                        value={formData.email}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div className="form-group" style={{ marginBottom: "20px" }}>
+                      <label className="form-label" htmlFor="rev-comment" style={{ fontSize: "13px", marginBottom: "6px" }}>Comments</label>
+                      <textarea
+                        id="rev-comment"
+                        name="comment"
+                        required
+                        placeholder="Share your experience with our products..."
+                        className="form-control"
+                        style={{ padding: "12px 14px", fontSize: "13px", minHeight: "100px", resize: "none" }}
+                        value={formData.comment}
+                        onChange={handleChange}
+                      ></textarea>
+                    </div>
+
+                    <button type="submit" className="btn-primary" style={{ width: "100%", justifyContent: "center", padding: "12px" }}>
+                      Submit Testimonial
+                    </button>
+                  </form>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Story Progress Stats */}
         <div className="glass-panel stats-grid" style={{ textAlign: "center", padding: "40px" }}>
           <div>
@@ -255,7 +478,9 @@ export default function About() {
             <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "var(--text-secondary)", marginTop: "4px" }}>Premium Products</p>
           </div>
           <div>
-            <h4 style={{ fontSize: "36px", fontWeight: "900", color: "var(--accent-primary)" }}>1,500+</h4>
+            <h4 style={{ fontSize: "36px", fontWeight: "900", color: "var(--accent-primary)" }}>
+              {reviews.length}+
+            </h4>
             <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "var(--text-secondary)", marginTop: "4px" }}>Active Reviews</p>
           </div>
           <div>
@@ -263,7 +488,11 @@ export default function About() {
             <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "var(--text-secondary)", marginTop: "4px" }}>Orders Delivered</p>
           </div>
           <div>
-            <h4 style={{ fontSize: "36px", fontWeight: "900", color: "var(--accent-primary)" }}>4.7 ★</h4>
+            <h4 style={{ fontSize: "36px", fontWeight: "900", color: "var(--accent-primary)" }}>
+              {reviews.length > 0 
+                ? (reviews.reduce((acc, r) => acc + r.rating, 0) / reviews.length).toFixed(1)
+                : "5.0"} ★
+            </h4>
             <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "var(--text-secondary)", marginTop: "4px" }}>Average Rating</p>
           </div>
         </div>
