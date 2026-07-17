@@ -54,7 +54,7 @@ export default function Home() {
               height: "100%",
               objectFit: "cover"
             }}
-            poster="/images/hero-banner-v2.jpg"
+            poster="/images/hero-banner-v4.jpg"
           >
             <source src="https://assets.mixkit.co/videos/preview/mixkit-man-training-with-dumbbells-in-a-gym-42261-large.mp4" type="video/mp4" />
             {/* Fallback video if first fails */}
