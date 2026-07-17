@@ -1327,9 +1327,43 @@ textarea.form-control {
   .hero-image-container:hover {
     transform: translateY(-5px) !important;
   }
+
+  .sidebar-filter {
+    position: relative !important;
+    top: auto !important;
+    margin-bottom: 30px !important;
+  }
+  
+  .filter-group {
+    margin-bottom: 16px !important;
+  }
+  
+  .filter-title {
+    margin-bottom: 16px !important;
+    font-size: 16px !important;
+  }
 }
 
 @media (max-width: 768px) {
+  .filter-list {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    padding-bottom: 8px !important;
+    gap: 10px !important;
+    width: 100% !important;
+    scrollbar-width: none !important;
+  }
+  
+  .filter-list::-webkit-scrollbar {
+    display: none !important;
+  }
+  
+  .filter-btn {
+    white-space: nowrap !important;
+    width: auto !important;
+    flex-shrink: 0 !important;
+  }
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
