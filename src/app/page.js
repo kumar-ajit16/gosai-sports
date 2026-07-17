@@ -100,7 +100,7 @@ export default function Home() {
                 src="/images/hero-banner-v2.jpg"
                 alt="Gosai Sports Featured Showcase"
                 fill
-                style={{ objectFit: "cover" }}
+                style={{ objectFit: "cover", borderRadius: "24px" }}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
               />
@@ -116,7 +116,7 @@ export default function Home() {
                 alignItems: "flex-end",
                 padding: "24px"
               }}>
-                <div className="glass-panel" style={{ padding: "12px 20px", display: "flex", alignItems: "center", gap: "12px" }}>
+                <div className="glass-panel hero-badge-card" style={{ padding: "12px 20px", display: "flex", alignItems: "center", gap: "12px" }}>
                   <Trophy style={{ color: "var(--accent-primary)" }} size={24} />
                   <div>
                     <h4 style={{ fontSize: "14px", fontWeight: "700" }}>Professional Grade</h4>

@@ -345,7 +345,7 @@ export default function About() {
             Hear from athletes, trainers, and coaches who use Gosai Sports gear daily, or share your own experience below.
           </p>
 
-          <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: "40px" }} className="reviews-layout">
+          <div style={{ display: "grid", gap: "40px" }} className="reviews-layout">
             {/* Reviews List */}
             <div>
               <h3 style={{ fontSize: "18px", fontWeight: "700", marginBottom: "20px", display: "flex", alignItems: "center", gap: "8px" }}>
