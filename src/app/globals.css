@@ -30,9 +30,9 @@
 
 /* --- DARK THEME OVERRIDE --- */
 [data-theme='dark'] {
-  --bg-primary: #0A0A0C;
-  --bg-secondary: #121217;
-  --bg-tertiary: #1B1B22;
+  --bg-primary: #131313;
+  --bg-secondary: #1C1C1C;
+  --bg-tertiary: #242424;
   
   --text-primary: #FFFFFF;
   --text-secondary: #9E9EAE;
@@ -42,7 +42,7 @@
   --accent-secondary: #E30B13;
   --accent-glow: rgba(255, 30, 39, 0.15);
   
-  --glass-bg: rgba(18, 18, 23, 0.75);
+  --glass-bg: rgba(28, 28, 28, 0.75);
   --glass-border: rgba(255, 255, 255, 0.06);
   --glass-highlight: rgba(255, 255, 255, 0.02);
   
@@ -1306,8 +1306,16 @@ textarea.form-control {
   }
   
   .hero-visual {
+    position: relative !important;
+    width: 100% !important;
+    height: 400px !important;
+    right: auto !important;
+    top: auto !important;
+    margin-top: 40px !important;
+    margin-bottom: 50px !important;
+    display: flex !important;
     justify-content: center !important;
-    margin-top: 20px;
+    align-items: center !important;
   }
   
   .hero-image-container {
@@ -1396,6 +1404,12 @@ textarea.form-control {
 }
 
 /* Reviews List Styles & Custom Scrollbar */
+.reviews-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+}
+
 .reviews-scroll-container::-webkit-scrollbar {
   width: 6px;
 }
@@ -1415,5 +1429,43 @@ textarea.form-control {
   .reviews-layout {
     grid-template-columns: 1fr !important;
     gap: 30px !important;
+  }
+}
+
+/* Store Redirect Buttons Mobile Stacking */
+@media (max-width: 576px) {
+  .store-buttons {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+}
+
+/* Stats Progress Grid Extra-Small Viewport collapse */
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 24px 12px !important;
+  }
+}
+
+/* Hero Badge Card Responsive Overlay positioning */
+.hero-badge-card {
+  transform: translateZ(30px);
+  transition: transform 0.6s cubic-bezier(0.15, 0.85, 0.35, 1);
+}
+
+@media (max-width: 992px) {
+  .hero-image-container {
+    overflow: visible !important;
+  }
+  
+  .hero-badge-card {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 30px) translateZ(30px) !important;
+    width: max-content;
+    box-shadow: 0 10px 25px rgba(255, 30, 39, 0.2), var(--shadow-premium) !important;
   }
 }
