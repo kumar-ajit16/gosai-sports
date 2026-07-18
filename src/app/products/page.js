@@ -140,8 +140,8 @@ function ProductsCatalog() {
         </div>
 
         {/* Filter controls */}
-        <div className="glass-panel" style={{ padding: "16px 24px", marginBottom: "32px", display: "flex", gap: "20px", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between" }}>
-          <div style={{ position: "relative", flex: "1", minWidth: "260px" }}>
+        <div className="glass-panel catalog-controls-panel" style={{ marginBottom: "32px" }}>
+          <div className="search-wrapper" style={{ position: "relative" }}>
             <Search size={18} style={{ position: "absolute", left: "14px", top: "50%", transform: "translateY(-50%)", color: "var(--text-muted)" }} />
             <input
               type="text"
@@ -153,11 +153,11 @@ function ProductsCatalog() {
             />
           </div>
 
-          <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+          <div className="sort-wrapper">
             <ArrowUpDown size={16} style={{ color: "var(--accent-primary)" }} />
             <select
-              className="form-control"
-              style={{ width: "180px", margin: 0, padding: "10px 14px", cursor: "pointer" }}
+              className="form-control sort-select"
+              style={{ margin: 0, padding: "10px 14px", cursor: "pointer" }}
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
             >
@@ -406,7 +406,7 @@ function ProductsCatalog() {
                   <p style={{ fontSize: "12px", color: "var(--text-muted)", marginBottom: "12px", textAlign: "center" }}>
                     Select a marketplace store below to purchase this product:
                   </p>
-                  <div className="store-buttons" style={{ gridTemplateColumns: "1fr 1fr" }}>
+                  <div className="store-buttons">
                     <a
                       href={selectedProduct.amazonLink}
                       target="_blank"
