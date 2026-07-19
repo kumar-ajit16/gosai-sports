@@ -17,6 +17,7 @@ export default function Footer() {
                   alt="Gosai Sports Logo" 
                   fill
                   style={{ objectFit: "contain" }}
+                  sizes="36px"
                 />
               </div>
               <div style={{ display: "flex", flexDirection: "column", lineHeight: "1" }}>
