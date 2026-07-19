@@ -46,6 +46,7 @@ export default function Navbar() {
               alt="Gosai Sports Logo" 
               fill
               style={{ objectFit: "contain" }}
+              sizes="42px"
               priority
             />
           </div>

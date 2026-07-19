@@ -246,6 +246,7 @@ export default function About() {
                   alt="Ajit Kumar, Founder & CEO"
                   fill
                   style={{ objectFit: "cover" }}
+                  sizes="120px"
                 />
               </div>
               <h3 style={{ fontSize: "20px", fontWeight: "800", marginBottom: "6px" }}>AJIT KUMAR</h3>
@@ -281,6 +282,7 @@ export default function About() {
                   alt="Uday Kumar Giri, Co-founder & COO"
                   fill
                   style={{ objectFit: "cover" }}
+                  sizes="120px"
                 />
               </div>
               <h3 style={{ fontSize: "20px", fontWeight: "800", marginBottom: "6px" }}>UDAY KUMAR GIRI</h3>
@@ -316,6 +318,7 @@ export default function About() {
                   alt="Nirbhay Giri, Co-founder & COO"
                   fill
                   style={{ objectFit: "cover" }}
+                  sizes="120px"
                 />
               </div>
               <h3 style={{ fontSize: "20px", fontWeight: "800", marginBottom: "6px" }}>NIRBHAY GIRI</h3>
@@ -474,17 +477,17 @@ export default function About() {
         {/* Story Progress Stats */}
         <div className="glass-panel stats-grid" style={{ textAlign: "center", padding: "40px" }}>
           <div>
-            <h4 style={{ fontSize: "36px", fontWeight: "900", color: "var(--accent-primary)" }}>9+</h4>
+            <h4 style={{ fontSize: "36px", fontWeight: "900", color: "var(--accent-primary)" }}>30+</h4>
             <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "var(--text-secondary)", marginTop: "4px" }}>Premium Products</p>
           </div>
           <div>
             <h4 style={{ fontSize: "36px", fontWeight: "900", color: "var(--accent-primary)" }}>
-              {reviews.length}+
+              {(80000 + reviews.length).toLocaleString()}+
             </h4>
             <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "var(--text-secondary)", marginTop: "4px" }}>Active Reviews</p>
           </div>
           <div>
-            <h4 style={{ fontSize: "36px", fontWeight: "900", color: "var(--accent-primary)" }}>15k+</h4>
+            <h4 style={{ fontSize: "36px", fontWeight: "900", color: "var(--accent-primary)" }}>6 Lakhs+</h4>
             <p style={{ fontSize: "12px", textTransform: "uppercase", letterSpacing: "1px", color: "var(--text-secondary)", marginTop: "4px" }}>Orders Delivered</p>
           </div>
           <div>
