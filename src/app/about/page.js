@@ -142,12 +142,9 @@ export default function About() {
         {/* Narrative Grid */}
         <div className="about-grid" style={{ marginBottom: "80px" }}>
           <div>
-            <span style={{ color: "var(--accent-primary)", textTransform: "uppercase", fontSize: "13px", fontWeight: "700", letterSpacing: "2px", display: "block", marginBottom: "12px" }}>
+            <span style={{ color: "var(--accent-primary)", textTransform: "uppercase", fontSize: "13px", fontWeight: "700", letterSpacing: "2px", display: "block", marginBottom: "24px" }}>
               Our Story
             </span>
-            <h2 style={{ fontSize: "32px", fontWeight: "800", marginBottom: "24px", lineHeight: "1.2" }}>
-              CHAMPIONING THE SPIRIT OF SPORT
-            </h2>
             <p style={{ color: "var(--text-secondary)", fontSize: "15px", lineHeight: "1.7", marginBottom: "16px" }}>
               Founded with a mission to make premium-quality sports gear accessible, Gosai Industries has grown from a local supplier into a trusted digital catalog of athletic equipment. We specialize in designing and sourcing heavy-duty PVC cricket gear, lightweight carbon fiber badminton rackets, and robust home gym workout tools.
             </p>
