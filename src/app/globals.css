@@ -1634,3 +1634,12 @@ textarea.form-control {
     padding: 0 16px !important;
   }
 }
+
+/* Google Maps Dark Mode styling via CSS filter inversion */
+.map-iframe {
+  transition: filter 0.3s ease;
+}
+
+[data-theme="dark"] .map-iframe {
+  filter: invert(90%) hue-rotate(180deg) grayscale(10%) contrast(90%);
+}
