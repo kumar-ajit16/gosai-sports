@@ -305,6 +305,7 @@ export default function Contact() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Gosai Industries Location Map"
+            className="map-iframe"
           ></iframe>
         </div>
       </div>
