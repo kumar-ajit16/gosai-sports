@@ -246,6 +246,7 @@ export default function About() {
                   alt="Ajit Kumar, Founder & CEO"
                   fill
                   style={{ objectFit: "cover" }}
+                  sizes="120px"
                 />
               </div>
               <h3 style={{ fontSize: "20px", fontWeight: "800", marginBottom: "6px" }}>AJIT KUMAR</h3>
@@ -281,6 +282,7 @@ export default function About() {
                   alt="Uday Kumar Giri, Co-founder & COO"
                   fill
                   style={{ objectFit: "cover" }}
+                  sizes="120px"
                 />
               </div>
               <h3 style={{ fontSize: "20px", fontWeight: "800", marginBottom: "6px" }}>UDAY KUMAR GIRI</h3>
@@ -316,6 +318,7 @@ export default function About() {
                   alt="Nirbhay Giri, Co-founder & COO"
                   fill
                   style={{ objectFit: "cover" }}
+                  sizes="120px"
                 />
               </div>
               <h3 style={{ fontSize: "20px", fontWeight: "800", marginBottom: "6px" }}>NIRBHAY GIRI</h3>
