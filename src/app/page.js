@@ -2,11 +2,24 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, Trophy, Dumbbell, ShieldCheck, Zap, Star } from "lucide-react";
 import { products } from "@/data/products";
 
 export default function Home() {
+  const [loadVideo, setLoadVideo] = useState(false);
+
+  useEffect(() => {
+    // Only load the heavy background video on desktop screen sizes to optimize mobile LCP & bandwidth
+    const checkViewport = () => {
+      if (window.innerWidth > 768) {
+        setLoadVideo(true);
+      }
+    };
+    const timer = setTimeout(checkViewport, 0);
+    return () => clearTimeout(timer);
+  }, []);
+
   // Select a few products to feature on the homepage
   const featuredProducts = products.filter(p => 
     ["pvc-cricket-bat", "pro-rackets", "pvc-dumbbells"].includes(p.id)
@@ -43,23 +56,35 @@ export default function Home() {
           zIndex: 1,
           opacity: 0.25
         }}>
-          {/* Looping video simulating dynamic sports action */}
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover"
-            }}
-            poster="/images/hero-banner-v4.jpg"
-          >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-man-training-with-dumbbells-in-a-gym-42261-large.mp4" type="video/mp4" />
-            {/* Fallback video if first fails */}
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-sports-shoe-running-in-the-grass-42284-large.mp4" type="video/mp4" />
-          </video>
+          {loadVideo ? (
+            /* Looping video simulating dynamic sports action */
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover"
+              }}
+              poster="/images/hero-banner-v4.jpg"
+            >
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-man-training-with-dumbbells-in-a-gym-42261-large.mp4" type="video/mp4" />
+              {/* Fallback video if first fails */}
+              <source src="https://assets.mixkit.co/videos/preview/mixkit-sports-shoe-running-in-the-grass-42284-large.mp4" type="video/mp4" />
+            </video>
+          ) : (
+            /* Optimized image poster fallback for mobile/performance tests */
+            <Image
+              src="/images/hero-banner-v4.jpg"
+              alt="Hero Background Poster"
+              fill
+              style={{ objectFit: "cover" }}
+              priority
+              sizes="100vw"
+            />
+          )}
           {/* Bottom vignette overlay to blend with dark page */}
           <div style={{
             position: "absolute",
@@ -179,6 +204,7 @@ export default function Home() {
                   alt="Sports Equipment"
                   fill
                   style={{ objectFit: "cover" }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <div className="category-card-overlay"></div>
@@ -198,6 +224,7 @@ export default function Home() {
                   alt="Fitness & Gym Equipment"
                   fill
                   style={{ objectFit: "cover" }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
               <div className="category-card-overlay"></div>
